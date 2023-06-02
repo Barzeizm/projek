@@ -75,6 +75,16 @@ header {
 
 /* Home */
 
+.slide-text{
+  position: absolute;
+  top: 45vh;
+  left: 45vh;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
 .slide .img-slides {
   height: 95vh;
   object-fit: cover;

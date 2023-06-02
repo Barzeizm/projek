@@ -38,6 +38,7 @@
     <div id="home">
 
         <div class="slide">
+            <h1 class="slide-text">Selamat Datang di Website Artikel <br> Barztic</h1>
             <img src="assets/slide1.jpg" alt="" class="img-slides">
         </div>
 
