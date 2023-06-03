@@ -1,10 +1,10 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "youthanarchism");
+$koneksi = new mysqli("localhost", "root", "", "youthanarchism");
 
 // kalo gagal
 
-if($conn -> connect_errno){
+if($koneksi -> connect_errno){
     echo"Gagal Terkoneksi ke Database" . $conn -> connect_error;
 }
 

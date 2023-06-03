@@ -1,5 +1,5 @@
-<?
-    include "crud/koneksi.php";
+<?php
+    include ("crud/koneksi.php");
 ?>
 
 
@@ -44,46 +44,34 @@
 
     </div>
 
+    <?php
+        $sql = "SELECT * FROM tb_artikel";
+        $hasil = mysqli_query($koneksi, $sql);
+
+        $artikel = mysqli_num_rows($hasil);
+        if($artikel > 0){
+            while($row = mysqli_fetch_assoc($hasil)){
+    ?>
     <div id="article" class="card-content">
         <ul class="cards">
             <li class="cards_item">
                 <div class="card">
                     <div class="card_image"><img src="assets/124.jpg"></div>
                     <div class="card_content">
-                        <h2 class="card_title">Card Grid Layout</h2>
+                        <h2 class="card_title"><?= $row["judul_artikel"]; ?></h2>
                         <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
                         <a href="" class="card-btn">
                             <input type="button" value="Baca">
                         </a>
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Card Grid Layout</h2>
-                        <p class="card_text"></p>
-                        <a href="" class="card-btn">
-                            <input type="button" value="Baca">
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li class="cards_item">
-                <div class="card">
-                    <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
-                    <div class="card_content">
-                        <h2 class="card_title">Card Grid Layout</h2>
-                        <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-                        <a href="" class="card-btn">
-                            <input type="button" value="Baca">
-                        </a>  
                     </div>
                 </div>
             </li>
         </ul>
     </div>
+    <?php
+            }
+        }
+    ?>
 
     <!-- Akhir Content -->
 </body>

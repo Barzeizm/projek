@@ -3,9 +3,15 @@
 
     session_start();
 
-    if($_SESSION['status']!="login"){
+    if($_SESSION['status']!="admin"){
         header("Location: ../admin/login.php");
     }
+
+    // if (!isset($_SESSION['admin'])) {
+    //     header("Location: ../admin/dashboard.php");
+    // }
+     
+    ?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +50,7 @@
 
     <!-- dashboard -->
     <div class="dashboard">
-        <h2>ini buat Dashboard</h2>
+        <?php echo "<h1>Selamat Datang, " . $_SESSION['status'] ."!". "</h1>"; ?>
         <p>aloo kamu</p>
     </div>
 </body>
