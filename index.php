@@ -52,6 +52,16 @@
         </div>
     </div>
 
+
+    <?php
+    if(isset($_GET["halaman"])){
+        if($_GET["halaman"] == "article"){
+            include 'article.php';
+        }
+    }
+    ?>
+
+    <h2>Our Article</h2>
     <div id="article" class="card-content">
     <?php
         $sql = "SELECT * FROM tb_artikel";
@@ -67,8 +77,8 @@
                     <div class="card_content">
                         <h2 class="card_title"><?= $row["judul_artikel"] ?></h2>
                         <p class="card_text"><?= $row["isi_artikel"] ?></p>
-                        <a href="" class="card-btn">
-                            <input type="button" value="Baca">
+                        <a href="article.php?id=<?php echo($row['id_artikel'])?>">
+                            <button class="btn-info">Baca Selengkapnya</button>
                         </a>
                     </div>
                 </div>
@@ -80,5 +90,11 @@
     </div>
 
     <!-- Akhir Content -->
+
+    <!-- FOOTER -->
+
+    <footer>
+        
+    </footer>
 </body>
 </html>

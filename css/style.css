@@ -110,7 +110,7 @@ header {
   margin: 90px 0 0 0;
 }
 
-.about h2 {
+h2 {
   text-align: center;
   font-size: 40px;
 }
@@ -118,6 +118,9 @@ header {
 .about .text-about {
   font-size: 20px;
   margin: 20px 30px 30px 30px;
+}
+
+.img-about {
 }
 
 /* Card */
@@ -202,4 +205,11 @@ a:hover {
 
 .card-btn input:hover {
   border: 2px solid var(--color4);
+}
+
+/* HALAMAN ARTIKEL */
+
+.content-artikel {
+  padding: 90px;
+  text-align: center;
 }
