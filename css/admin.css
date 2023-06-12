@@ -2,7 +2,7 @@
 
 :root {
   --first-color: #000000;
-  --font-color: #f4eee0;
+  --color-w: #f4eee0;
   --third-color: #393646;
   /* --blue-color: #82b1c9; */
   --blue-color: #184d9b;
@@ -14,10 +14,13 @@
   margin: 0;
   padding: 0;
 }
-
 body {
-  /* background-color: var(--third-color); */
-  background-size: cover;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Login */
@@ -31,14 +34,11 @@ section {
 .form-login {
   border: 2px solid black;
   padding: 80px;
-  background-color: var(--white);
+  background-color: var(--first-color);
   backdrop-filter: blur(10px);
-  box-shadow: 6px 6px 5px 0px
-    rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 6px 6px 5px 0px
-    rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 6px 6px 5px 0px
-    rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 6px 5px 0px rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(255, 255, 255, 0.1);
 }
 
 .form-login h2 {
@@ -71,11 +71,10 @@ section {
 
 .btn input:hover {
   cursor: pointer;
-  box-shadow: inset
-    rgba(33, 134, 201, 1);
+  box-shadow: inset rgba(33, 134, 201, 1);
 }
 
-/* ADMIN DASHBOARD */
+/* SIDEBAR ADMIN */
 
 .container {
   position: fixed;
@@ -84,7 +83,7 @@ section {
   right: 0;
   width: 250px;
   height: 100vh;
-  background-color: var(--third-color);
+  background-color: var(--first-color);
   /* background-color: #82b1c9; */
 }
 
@@ -105,7 +104,7 @@ section {
 .sidebar .list-item a {
   border: 2px solid transparent;
   font-family: var(--font);
-  color: var(--font-color);
+  color: var(--color-w);
   letter-spacing: 2px;
   text-decoration: none;
   padding: 20px 15px 20px 15px;
@@ -116,12 +115,171 @@ section {
   border: 2px solid black;
 }
 
-.dashboard {
+/* ISI DASHBOARD ADMIN */
+
+.dashboard-kanan {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   font-family: var(--font);
-  color: var(--font-color);
+  color: var(--color-w);
   height: 100vh;
   padding-top: 50px;
   padding-left: 50px;
-  background-color: var(--third-color);
+  background-color: var(--first-color);
   margin: 50px 50px 50px 300px;
+}
+
+.dashboard-kanan::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard-kanan h1 {
+  margin-bottom: 30px;
+}
+
+/* .dashboard-kanan .article-tambah table {
+  width: 95%;
+  border: 1px solid var(--white);
+}
+
+.dashboard-kanan
+  .article-tambah
+  table
+  tr
+  td {
+  padding: 30px;
+} */
+
+/* Article Admin */
+
+.dashboard-kanan .article-tambah .inp-judul {
+  color: var(--color-w);
+  background: transparent;
+  outline: 0;
+  border: 2px solid var(--color-w);
+  width: 95%;
+  padding: 12px 30px 12px 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard-kanan .article-tambah .file-article {
+  width: 95%;
+  border: 2px solid var(--color-w);
+  margin-bottom: 30px;
+}
+
+.dashboard-kanan .article-tambah .file-article input {
+  padding: 10px 20px 10px 20px;
+}
+
+.dashboard-kanan .article-tambah .inp-isi {
+  color: var(--color-w);
+  background: transparent;
+  outline: 0;
+  border: 2px solid var(--color-w);
+  width: 95%;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 30px;
+}
+
+/* ARTICLE TAMBAH */
+
+.article-admin {
+  margin-bottom: 2em;
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  margin: 0 20px 40px 20px;
+  background-color: var(--color-w);
+  color: var(--first-color);
+  width: 400px;
+  height: 600px;
+}
+.card img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+  /* vertical-align: middle; */
+}
+
+.card > .judul-artikel,
+.card > .isi-artikel {
+  height: 100px;
+  margin: 10px;
+  padding-top: 5px;
+}
+
+.card-btn {
+  width: 180px;
+  margin: auto;
+}
+
+.card-btn a {
+  border: 1px solid var(--first-color);
+  text-decoration: none;
+  padding: 10px 40px 10px 40px;
+  background-color: var(--color-w);
+  color: var(--first-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-btn a:hover {
+  background-color: var(--first-color);
+  color: var(--color-w);
+}
+
+.card_content {
+  padding: 1em;
+  background: var(--color1);
+}
+
+.card_title {
+  font-family: var(--font);
+  color: var(--color3);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  font-family: var(--font);
+  color: var(--color3);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+/* a:hover {
+  text-decoration: none;
+  cursor: auto;
+} */
+
+.card-btn {
+  /* display: flex;
+  justify-content: end; */
+}
+
+.card-btn input {
+  cursor: pointer;
+  color: var(--color3);
+  border: 2px solid transparent;
+  outline: 0;
+  background-color: transparent;
+  padding: 10px 170px 10px 170px;
+  transition: all ease-in-out 0.5s;
+}
+
+.card-btn input:hover {
+  border: 2px solid var(--color4);
 }

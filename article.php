@@ -1,13 +1,9 @@
 <?php
     include "crud/koneksi.php";
 
-    $sql=$koneksi->query("SELECT * FROM tb_artikel where id_artikel=$_GET[id]");
+    $id = $_GET['id'];
+    $sql = mysqli_query($koneksi, "SELECT * FROM tb_artikel where id_artikel = $id");
     $baris=mysqli_fetch_array($sql);
-?>
-
-
-<?php
-    include ("crud/koneksi.php");
 ?>
 
 
@@ -24,39 +20,34 @@
 </head>
 <body>
     <!-- javascript -->
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="">BarzTic</a>
+            <a href="index.php">BarzTic</a>
         </div>
         <nav class="navbar">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.php#about">About</a></li>
                 <li><a href="#article">Article</a></li>
                 <li><a href="">Gallery</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- <div id="home">
-
-        <div class="slide">
-            <h1 class="slide-text">Selamat Datang di Website Artikel <br> Barztic</h1>
-            <img src="assets/slide1.jpg" alt="" class="img-slides">
-        </div>
-
-    </div> -->
     <!-- Akhir Header -->
 
     <!-- Content -->
 
-    <div class="content-artikel">
+    <article class="content-artikel">
+        <img src="assets/<?= $baris['gambar_artikel']; ?>">
         <h2 class="judul-artikel"><?= $baris ['judul_artikel'];?></h2> <br>
-        <p><?= $baris ['isi_artikel'];?></p>
-    </div>
+        <div class="isi-artikel">
+            <p><?= $baris ['isi_artikel'];?></p><br>
+        </div>
+    </article>
 
     <!-- Akhir Content -->
 

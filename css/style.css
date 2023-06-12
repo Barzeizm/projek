@@ -1,41 +1,43 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
 :root {
-  --font: "Ubuntu", sans-serif;
+  --font-main: "Ubuntu", sans-serif;
+  --font-kecil: "Merriweather", serif;
   --color1: #000000;
   --color2: rgba(255, 255, 255, 0.1);
-  --color3: azure;
+  --color3: #d8d8d8;
   --color4: #7865cc;
 }
 
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Navbar */
 
 header {
   position: fixed;
-  width: 100%;
   z-index: 1;
+  width: 100%;
   background-color: var(--color1);
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
   height: 60px;
 }
-
-/* .sticky {
-  transition: all ease-in 0.5s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-} */
 
 .navbar {
   display: flex;
@@ -45,6 +47,7 @@ header {
 }
 
 .logo a {
+  font-family: var(--font-main);
   float: right;
   font-size: 25px;
   text-decoration: none;
@@ -67,13 +70,13 @@ header {
 .navbar ul li a {
   cursor: pointer;
   font-size: 14px;
-  font-family: var(--font);
+  font-family: var(--font-main);
   color: var(--color3);
-  border-bottom: 3px solid transparent;
+  border-bottom: 3px solid transpvar(--color1);
   text-decoration: none;
   margin: 5px;
   padding: 10px 20px 10px 20px;
-  transition: all ease-in 0.5s;
+  transition: border-bottom ease-in 0.5s, color ease-in 0.5s;
 }
 
 .navbar ul li a:hover {
@@ -88,128 +91,167 @@ header {
 .slide-text {
   position: absolute;
   top: 45vh;
-  left: 40vh;
-  font-family: var(--font);
+  left: 35vh;
+  font-family: var(--font-main);
   font-weight: bold !important;
   font-size: 60px;
   text-align: center;
   color: var(--color3);
-  text-shadow: 5px 5px
-    rgba(0, 0, 0, 0.8);
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.8);
 }
 
-.slide .img-slides {
-  margin-top: 60px;
-  height: 95vh;
+.home .slide img {
+  width: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
 /* ABOUT */
 
 .about {
-  margin: 90px 0 0 0;
-}
-
-h2 {
-  text-align: center;
-  font-size: 40px;
+  background-color: var(--color1);
+  color: var(--color3);
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
 }
 
 .about .text-about {
-  font-size: 20px;
-  margin: 20px 30px 30px 30px;
+  position: relative;
+  top: 20vh;
+  left: 20vh;
+  width: 500px;
 }
 
-.img-about {
+.text-about h2 {
+  font-family: var(--font-main);
+  font-size: 50px;
+}
+
+.text-about p {
+  font-family: var(--font-kecil);
+}
+
+.about > .about-img > img {
+  position: relative;
+  top: 20%;
+  left: 40%;
+  height: 400px;
+  width: 500px;
+  object-fit: cover;
+}
+
+.about .img-tiban > img {
+  position: relative;
+  top: 30%;
+  right: 30%;
+  height: 400px;
+  width: 500px;
+  object-fit: cover;
 }
 
 /* Card */
 
-.card-content {
-  padding-top: 40px;
-  display: flex;
-  justify-content: center;
+.text-artikel {
+  font-family: var(--font-main);
+  color: var(--color3);
+  font-size: 40px;
+  font-weight: bold !important;
+  padding-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-img {
-  height: auto;
-  width: 100%;
-  vertical-align: middle;
+article {
+  background-color: var(--color1);
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* overflow-y: hidden; */
 }
 
 .card {
+  margin: 0 20px 40px 20px;
+  background-color: var(--color3);
+  color: var(--color1);
   width: 400px;
-  height: 400px;
+  height: 600px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.card > img {
+  /* border-radius: 10px 10px 0 0; */
+  object-fit: cover;
+  width: 400px;
+  height: 300px;
 }
 
-.cards_item {
-  display: flex;
-  padding: 1em;
-}
-
-/* .card_image {
-  height: 200px;
-} */
-
-.card_content {
-  padding: 1em;
-  background: var(--color1);
-}
-
-.card_title {
-  font-family: var(--font);
-  color: var(--color3);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
-}
-
-.card_text {
-  font-family: var(--font);
-  color: var(--color3);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-  font-weight: 400;
-}
-
-a:hover {
-  text-decoration: none;
-  cursor: auto;
+.card > .judul-artikel,
+.card > .isi-artikel {
+  height: 100px;
+  margin: 10px;
+  padding-top: 5px;
 }
 
 .card-btn {
-  /* display: flex;
-  justify-content: end; */
+  width: 160px;
+  margin: auto;
 }
 
-.card-btn input {
-  cursor: pointer;
+.card-btn a {
+  border: 1px solid var(--color1);
+  text-decoration: none;
+  padding: 10px 60px 10px 60px;
+  background-color: var(--color3);
+  color: var(--color1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-btn a:hover {
+  background-color: var(--color1);
   color: var(--color3);
-  border: 2px solid transparent;
-  outline: 0;
-  background-color: transparent;
-  padding: 10px 170px 10px 170px;
-  transition: all ease-in-out 0.5s;
-}
-
-.card-btn input:hover {
-  border: 2px solid var(--color4);
 }
 
 /* HALAMAN ARTIKEL */
 
 .content-artikel {
-  padding: 90px;
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  color: var(--color3);
+  /* padding: 900px; */
   text-align: center;
+}
+
+.content-artikel > img {
+  margin-top: 90px;
+  /* position: absolute;
+  left: 10%;
+  top: 90px; */
+  width: 80%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.content-artikel > .judul-artikel {
+  text-align: center;
+  font-family: var(--font-main);
+  color: var(--color3);
+  font-size: 40px;
+}
+
+.content-artikel .isi-artikel {
+  color: var(--color3);
+  font-family: var(--font-kecil);
+  line-height: 20px;
+  min-height: 100vh;
+  margin-left: 30px;
+}
+
+.test > h2 {
+  text-align: justify;
+  margin-left: 40px;
+  width: 599px;
 }
